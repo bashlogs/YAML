@@ -1,3 +1,4 @@
-docker-compose.yml
 mypod.yml
 playbook.yml
+node_modules
+.env

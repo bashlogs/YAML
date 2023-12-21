@@ -1,0 +1,28 @@
+version: '2'
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - volume2:/data/db
+    environment:
+      - MONGO_URI=${MONGO_URI}
+    networks:
+      - network2
+  app:
+    image: test5
+    ports:
+      - '3000:3000'
+    environment:
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - mongodb
+    networks:
+      - network2
+      
+volumes:
+  volume2:
+
+networks:
+  network2:
