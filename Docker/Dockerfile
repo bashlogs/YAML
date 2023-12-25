@@ -1,8 +1,8 @@
-FROM node:20
+FROM node:alpine
 
 WORKDIR /usr/src/app
 
-COPY package* .
+COPY package* ./
 
 RUN npm install
 
